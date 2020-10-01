@@ -26,4 +26,12 @@ export class CartService {
   getShippingPrices() {
     return this.http.get('/assets/shipping.json');
   }
+
+  //Remover item do carrinho
+  remove(item) {
+    this.items.splice(this.items.indexOf(item), 1);
+
+    alert('Item removido com sucesso!');
+    return this.items;
+  }
 }

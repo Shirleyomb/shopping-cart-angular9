@@ -5,8 +5,11 @@
 </p>
 
 <div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
+  <span>{{ item.name }} oi</span>
   <span>{{ item.price | currency }}</span>
+
+  <!-- Remover item do carrinho -->
+  <button (click)="remove(item)">Remove</button>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
@@ -25,6 +28,5 @@
     <input id="address" type="text" formControlName="address">
   </div>
 
-  <button class="button" type="submit">Purchase</button>
-
+    <button class="button" type="submit">Purchase</button>
 </form>
